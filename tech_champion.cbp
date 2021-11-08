@@ -12,7 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-std=c++11" />
+					<Add option="-std=c++17" />
 					<Add option="-g" />
 					<Add directory="$(#sfml.include)" />
 					<Add directory="$(#physfs.include)" />
@@ -20,6 +20,7 @@
 				<Linker>
 					<Add option="-static-libstdc++" />
 					<Add option="-llibphysfs" />
+					<Add option="-lstdc++fs" />
 					<Add library="sfml-network-d" />
 					<Add library="sfml-audio-d" />
 					<Add library="sfml-graphics-d" />
@@ -37,10 +38,13 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++17" />
 					<Add directory="${#sfml.include}" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add option="-llibphysfs" />
+					<Add option="-lstdc++fs" />
 					<Add library="sfml-network" />
 					<Add library="sfml-audio" />
 					<Add library="sfml-graphics" />
@@ -53,167 +57,31 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++17" />
 		</Compiler>
 		<Unit filename="bin/config.ini">
 			<Option target="Release" />
 		</Unit>
-		<Unit filename="headers/anim_set.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/animation.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/config.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/entity/bot.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/entity/entity.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/entity/player.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/gui/button.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/gui/check_box.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/gui/gui.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/gui/simple_button.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/gui/slider.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/gui/text_button.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/map/map.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/map/tileset.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/object/basic_bullet.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/object/bullet.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/physfs_stream.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/resource_manager.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/screens/game.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/screens/loading.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/screens/main_menu.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/screens/screen.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/screens/settings.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="headers/stats_table.hpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/anim_set.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/animation.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/base.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/config.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/entity/bot.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/entity/entity.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/entity/player.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/gui/button.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/gui/check_box.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/gui/gui.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/gui/simple_button.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/gui/slider.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/gui/text_button.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/main.cpp" />
-		<Unit filename="sources/map/map.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/map/tileset.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/object/basic_bullet.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/object/bullet.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/physfs_stream.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/popup.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/resource_manager.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/screens/game.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/screens/loading.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/screens/main_menu.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/screens/screen.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/screens/settings.cpp">
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="sources/stats_table.cpp">
-			<Option target="Release" />
-		</Unit>
+		<Unit filename="src/animation.cpp" />
+		<Unit filename="src/animation.hpp" />
+		<Unit filename="src/base.cpp" />
+		<Unit filename="src/base.hpp" />
+		<Unit filename="src/config.cpp" />
+		<Unit filename="src/config.hpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/map.cpp" />
+		<Unit filename="src/map.hpp" />
+		<Unit filename="src/physfs_stream.cpp" />
+		<Unit filename="src/physfs_stream.hpp" />
+		<Unit filename="src/player.cpp" />
+		<Unit filename="src/player.hpp" />
+		<Unit filename="src/resource_manager.cpp" />
+		<Unit filename="src/resource_manager.hpp" />
+		<Unit filename="src/tileset.cpp" />
+		<Unit filename="src/tileset.hpp" />
 		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
-			<lib_finder disable_auto="1" />
 			<editor_config active="1" use_tabs="0" tab_indents="1" tab_width="4" indent="4" eol_mode="0" />
+			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
